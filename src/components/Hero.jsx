@@ -7,7 +7,7 @@ import bgSvg2 from '../assets/Vector 7621.png'
 
 export default function Hero() {
     return (
-        <div className='py-10 flex  items-center justify-center ' >
+        <div className='py-10 flex flex-col lg:flex-row  items-center justify-between ' >
 
             <div>
                 <span className='relative'>
