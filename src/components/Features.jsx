@@ -15,7 +15,7 @@ export default function Features() {
                 <p className='text-gray-500 max-w-[250px] mt-2 text-sm ' >Streamlined booking process for clients with service catalogs and availability.</p>
             </div>
 
-            <div className='lg:border-r-2 border-gray-100' >
+            <div className='lg:border-r-2  border-gray-100' >
                 <img className='bg-[#ecfceb] rounded-xl p-2' src={svg1} alt="svg img" />
                 <h2 className='font-bold mt-8' >Real-Time Tracking</h2>
                 <p className='text-gray-500 mt-2 text-sm max-w-[250px] ' >Monitor job progress, employee hours, and project timelines with live updates.</p>

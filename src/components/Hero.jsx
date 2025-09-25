@@ -30,7 +30,7 @@ export default function Hero() {
             {/* img side */}
             <div className="bg-cover bg-center"
                 style={{ backgroundImage: `url(${bg})` }} >
-                <img className='z-10' src={heroImg} alt="banner img phone" />
+                <img className='z-10 w-[720px] ' src={heroImg} alt="banner img phone" />
 
             </div>
 
