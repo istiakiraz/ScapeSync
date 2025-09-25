@@ -16,11 +16,11 @@ export default function Navbar() {
 
                     {/* Right Side */}
                     <div className="navbar-end">
-                        <a className="btn transition-transform duration-300 ease-in-out 
+                        <Link to='/register' className="btn transition-transform duration-300 ease-in-out 
                             text-white hover:scale-105 shadow-[0px_13px_22px_-6px_rgba(59,163,52,0.67)] 
                             border-none px-6 rounded-[8px] bg-[#3ba334]">
                             Get Started
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

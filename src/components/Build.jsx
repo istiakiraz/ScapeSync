@@ -4,14 +4,25 @@ import mobile2 from '../assets/mobiler-2.png'
 import mobile3 from '../assets/mobile-left.png'
 import bgWhite from '../assets/bg-white.png'
 import bg from '../assets/Ellipse 26.png'
+import svg1 from '../assets/titleSvg.png'
+import svg2 from '../assets/Frame1.png'
+import svg3 from '../assets/Frame2.png'
+import svg4 from '../assets/Frame3.png'
 
 export default function Build() {
     return (
-        <div className='mt-40 text-center'>
+        <div className='mt-40 relative text-center'>
 
-            <h2 className='text-5xl font-bold' >
+            <img className='absolute h-[1420px] top-40 right-200' src={svg2} alt="svg img" />
+            <img className='absolute top-40 left-40 ' src={svg3} alt="svg img" />
+            <img className='absolute top-40 right-20 ' src={svg4} alt="svg img" />
+
+           <span className='relative' >
+             <h2 className='text-5xl  relative z-20 font-bold' >
                 Build for Everyone
+                <img className='absolute top-10 right-140 z-10' src={svg1} alt="svg" />
             </h2>
+           </span>
             <p className='text-center text-gray-500 max-w-2xl mx-auto mt-4' >
                 Whether you're booking services, managing tasks, or running operations, we've designed the perfect experience for you.
             </p>

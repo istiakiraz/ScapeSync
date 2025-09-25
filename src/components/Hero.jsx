@@ -16,8 +16,8 @@ export default function Hero() {
                 <span className='relative'>
                     <h1 className='text-7xl font-bold max-w-xl z-20' >All Your Jobs
                         One Smart App</h1>
-                    <img className='absolute -mt-50 ml-50' src={bgSvg1} alt="svg img" />
-                    <img className='absolute w-80 z-10 ml-46 -mt-2' src={bgSvg2} alt="svg img" />
+                    <img className='absolute -top-20 right-60' src={bgSvg1} alt="svg img" />
+                    <img className='absolute w-92 z-10 right-15 -bottom-[2px]' src={bgSvg2} alt="svg img" />
                 </span>
 
                 <p className='2xl:max-w-[480px] text-gray-500 mt-6' >Built for business owners, employees, and clients streamline job scheduling, service tracking, and team management in one powerful app.</p>
