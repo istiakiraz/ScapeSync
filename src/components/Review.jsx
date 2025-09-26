@@ -10,7 +10,7 @@ export default function Review() {
 
         <div className='text-center flex flex-col items-center mt-40'>
 
-            <h2 className='text-5xl font-bold' >
+            <h2 className='text-4xl md:text-5xl font-bold' >
                 What Our Users Are Saying
             </h2>
             <p className='text-center text-gray-500 text-sm max-w-xl mx-auto mt-4' >

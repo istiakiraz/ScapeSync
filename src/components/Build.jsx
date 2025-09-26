@@ -13,14 +13,14 @@ export default function Build() {
     return (
         <div className='mt-40 relative text-center'>
 
-            <img className='absolute hidden lg:block h-[1420px] top-40 right-200' src={svg2} alt="svg img" />
+            <img className='absolute hidden lg:block 2xl:h-[1420px]  top-40 right-120 2xl:right-200' src={svg2} alt="svg img" />
             <img className='absolute hidden lg:block top-40 left-40 ' src={svg3} alt="svg img" />
             <img className='absolute hidden lg:block top-40 right-20 ' src={svg4} alt="svg img" />
 
            <span className='relative' >
-             <h2 className='text-5xl  relative z-20 font-bold' >
+             <h2 className='  text-4xl md:text-5xl  relative z-20 font-bold' >
                 Build for Everyone
-                <img className='absolute top-10 right-140 z-10' src={svg1} alt="svg" />
+                <img className='absolute top-10 2xl:right-140 right-0  lg:right-90 z-10' src={svg1} alt="svg" />
             </h2>
            </span>
             <p className='text-center text-gray-500 max-w-2xl mx-auto mt-4' >

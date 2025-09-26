@@ -17,7 +17,7 @@ export default function Hero() {
                 <span className='relative'>
                     <h1 className='md:text-7xl lg:mt-0 mt-10 md:mt-20 text-5xl font-bold max-w-xl z-20' >All Your Jobs
                         One Smart App</h1>
-                    <img className='absolute  -top-2 md:top-10  lg:-top-20 md:left-70 md:size-28 right-30 lg:size-32 size-20 lg:right-60' src={bgSvg1} alt="svg img" />
+                    <img className='absolute  -top-2 md:top-10  lg:-top-20 md:left-70 md:size-28 right-30 lg:size-32 size-20 lg:right-20' src={bgSvg1} alt="svg img" />
                     <img className='absolute md:w-92 z-10 w-56 right-0 lg:right-15 -bottom-[2px]' src={bgSvg2} alt="svg img" />
                 </span>
 
