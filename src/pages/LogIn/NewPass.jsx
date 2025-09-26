@@ -4,15 +4,12 @@ import { Link, useNavigate } from "react-router";
 import { FcGoogle } from "react-icons/fc";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
-export default function Register() {
+export default function NewPass() {
     // States
     const [formData, setFormData] = useState({
-        first_name: "",
-        last_name: "",
         email: "",
         password: "",
         password_confirmation: "",
-        terms: false,
     });
 
     const [showPassword, setShowPassword] = useState(false);
@@ -85,43 +82,16 @@ export default function Register() {
             <div className="flex items-center justify-center mt-14">
                 <div className="w-full max-w-[500px] p-8">
                     <h2 className="text-3xl font-semibold text-center">
-                        Create your Account
+                        Enter your new password.
                     </h2>
                     <p className="text-center text-gray-500 mb-14 mt-1">
-                        When sports Meets smart Tech.
+                      Please enter the email address associated with your account, and we'll email you a link to reset your password.
                     </p>
 
                     <form onSubmit={handleSubmit} className="mt-6 space-y-4">
-                        {/* First & Last Name */}
-                        <div className="flex gap-3">
-                            <input
-                                type="text"
-                                name="first_name"
-                                value={formData.first_name}
-                                onChange={handleChange}
-                                placeholder="First Name"
-                                className="input input-bordered rounded h-14 w-full"
-                            />
-                            <input
-                                type="text"
-                                name="last_name"
-                                value={formData.last_name}
-                                onChange={handleChange}
-                                placeholder="Last Name"
-                                className="input input-bordered h-14 w-full"
-                            />
-                        </div>
+                       
 
-                        {/* Email */}
-                        <input
-                            type="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            placeholder="Email address"
-                            className="input input-bordered h-14 w-full"
-                        />
-
+                        
                         {/* Password */}
                         <div className="relative">
                             <input
@@ -166,27 +136,7 @@ export default function Register() {
                             </span>
                         </div>
 
-                        {/* Terms & Conditions */}
-                        <label className="flex items-center gap-2 text-sm">
-                            <input
-                                type="checkbox"
-                                name="terms"
-                                checked={formData.terms}
-                                onChange={handleChange}
-                                className="checkbox checkbox-sm"
-                            />
-                            <span>
-                                I agree to Tech Takes{" "}
-                                <a href="#" className="text-blue-600 underline">
-                                    Terms of Service
-                                </a>{" "}
-                                and{" "}
-                                <a href="#" className="text-blue-600 underline">
-                                    Privacy Policy
-                                </a>
-                                .
-                            </span>
-                        </label>
+    
 
                         {/* Submit Button */}
                         <button
@@ -200,26 +150,7 @@ export default function Register() {
                         </button>
                     </form>
 
-                    {/* Divider */}
-                    <div className="flex items-center gap-3 my-5">
-                        <div className="h-px flex-1 bg-gray-300"></div>
-                        <span className="text-gray-400 text-sm">OR</span>
-                        <div className="h-px flex-1 bg-gray-300"></div>
-                    </div>
-
-                    {/* Google Button */}
-                   <Link  target="_blank" to='https://firebase.google.com/docs/auth' > <button className="btn w-full bg-white border border-gray-300 hover:bg-gray-100">
-                        <FcGoogle size={22} />
-                        <span>Continue with Google</span>
-                    </button> </Link>
-
-                    {/* Footer Link */}
-                    <p className="text-center text-sm mt-5">
-                        Already have an account?{" "}
-                        <Link to="/login" className="text-green-600 font-medium">
-                            Log In
-                        </Link>
-                    </p>
+                   
                 </div>
             </div>
         </div>

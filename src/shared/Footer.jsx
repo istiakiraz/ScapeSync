@@ -14,25 +14,27 @@ export default function Footer() {
     <div className='bg-[#0f3b34] relative overflow-hidden  ' >
 
       <div className='2xl:max-w-9/12 max-w-11/12 relative  pt-30 pb-8 mx-auto ' >
-        <div className='flex items-center justify-between'>
+        <div className='flex flex-col lg:flex-row items-start space-y-8 lg:items-center justify-between'>
           <img src={logo} alt="site logo" />
           <p className='max-w-[450px] text-white/80' >Your all-in-one platform for job scheduling, employee management, and client service built to keep your business running smoothly from anywhere.</p>
 
           <span className=' flex items-center gap-5'>
-            <button>
+        <Link  target="_blank" to='https://www.apple.com/store' ><button className='transition-transform duration-300 ease-in-out cursor-pointer hover:scale-105 '>
               <img src={appleBtn} alt="apple btn" />
-            </button>
-            <button>
-              <img src={googleBtn} alt="google btn" />
-            </button>
+            </button></Link>
+            
+
+        <Link  target="_blank" to='https://play.google.com/store/games?hl=en' >    <button className='transition-transform duration-300 ease-in-out cursor-pointer hover:scale-105 ' >
+              <img  src={googleBtn} alt="google btn" /> 
+            </button> </Link>
           </span>
         </div>
 
-        <div className='flex items-center gap-8 mt-24'>
-          <Link><FaYoutube size={25} color='white' /></Link>
-          <Link><FaFacebook size={25} color='white' /></Link>
-          <Link><FaFacebook size={25} color='white' /></Link>
-          <Link><FaInstagram size={25} color='white' /></Link>
+        <div className='flex items-center *:hover:scale-105 *:transition-transform *:duration-300 *:ease-in-out   gap-8 mt-24'>
+          <Link  target="_blank" to='https://youtube.com' ><FaYoutube size={25} color='white' /></Link>
+          <Link  target="_blank" to='https://x.com' ><FaXTwitter size={25} color='white' /></Link>
+          <Link  target="_blank" to='https://facebook.com' ><FaFacebook size={25} color='white' /></Link>
+          <Link  target="_blank" to='https://www.instagram.com/' ><FaInstagram size={25} color='white' /></Link>
         </div>
 
       </div>

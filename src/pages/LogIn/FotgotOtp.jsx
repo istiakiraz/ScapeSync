@@ -3,7 +3,7 @@ import logo from "../../assets/logo.png";
 import { Link, useLocation, useNavigate } from "react-router";
 import { IoChevronBack } from "react-icons/io5";
 
-export default function Otp() {
+export default function ForgotOtp() {
   const location = useLocation();
   const [apiData, setApiData] = useState(null);
   const [showModal, setShowModal] = useState(true);
@@ -70,7 +70,7 @@ export default function Otp() {
       if (res.ok) {
         alert("✅ OTP Verified Successfully!");
 
-        navigate('/success')
+        navigate('/new-pass')
 
       } else {
         alert("❌ Verification Failed: " + (data.message || "Unknown error"));
@@ -144,7 +144,7 @@ export default function Otp() {
       {/* OTP Page Content */}
       {!showModal && (
         <div className="flex flex-col items-start max-w-[500px] mx-auto justify-center flex-1">
-          <Link to='/register' >
+          <Link to='/forgot-password' >
             <button className="flex items-center hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer mb-10 gap-1" ><IoChevronBack color='#3ba334' size={20} /> <p className="text-xm text-[#3ba334] " >Back</p>
             </button>
           </Link>

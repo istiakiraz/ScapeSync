@@ -13,7 +13,7 @@ export default function Faq() {
             </p>
 
 
-     <div className='text-left mt-14 max-w-9/12 mx-auto space-y-5'>
+     <div className='text-left mt-14 md:max-w-9/12 mx-auto space-y-5'>
 
            <div className="collapse collapse-plus bg-base-100 border border-[#3ba334]/30">
   <input type="radio" name="my-accordion-3" defaultChecked />

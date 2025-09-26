@@ -4,19 +4,16 @@ import { Link, useNavigate } from "react-router";
 import { FcGoogle } from "react-icons/fc";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
-export default function Register() {
+export default function LogIn() {
     // States
     const [formData, setFormData] = useState({
-        first_name: "",
-        last_name: "",
+
         email: "",
         password: "",
-        password_confirmation: "",
-        terms: false,
+        remember_me: false,
     });
 
     const [showPassword, setShowPassword] = useState(false);
-    const [showConfirm, setShowConfirm] = useState(false);
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
@@ -27,21 +24,19 @@ export default function Register() {
             ...formData,
             [name]: type === "checkbox" ? checked : value,
         });
+
+        console.log(formData)
     };
 
     // Handle submit
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (!formData.terms) {
-            alert("You must agree to the Terms & Privacy Policy");
-            return;
-        }
 
         setLoading(true);
 
         try {
-            const res = await fetch("https://apitest.softvencefsd.xyz/api/register", {
+            const res = await fetch("https://apitest.softvencefsd.xyz/api/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -51,18 +46,19 @@ export default function Register() {
             });
 
             const data = await res.json();
-            console.log("API Response:", data);
+            // console.log("API Response:", data);
 
-            if (data.status === 201) {
-                navigate("/otp", { state: { apiData: data } });
-            }
+            // if (data.status === true) {
+            //     navigate("/");
+            // }
 
 
 
             if (res.ok) {
-                alert("✅ Registration successful!");
+                alert("✅ Log in successful!");
+                navigate("/");
             } else {
-                alert("❌ Registration failed: " + (data.message || "Unknown error"));
+                alert("❌ Log in failed: " + (data.message || "Unknown error"));
             }
         } catch (error) {
             console.error("Error:", error);
@@ -85,32 +81,16 @@ export default function Register() {
             <div className="flex items-center justify-center mt-14">
                 <div className="w-full max-w-[500px] p-8">
                     <h2 className="text-3xl font-semibold text-center">
-                        Create your Account
+                        Welcome to ScapeSync
                     </h2>
                     <p className="text-center text-gray-500 mb-14 mt-1">
-                        When sports Meets smart Tech.
+                        Please share your login details so you can access the website.
                     </p>
 
-                    <form onSubmit={handleSubmit} className="mt-6 space-y-4">
-                        {/* First & Last Name */}
-                        <div className="flex gap-3">
-                            <input
-                                type="text"
-                                name="first_name"
-                                value={formData.first_name}
-                                onChange={handleChange}
-                                placeholder="First Name"
-                                className="input input-bordered rounded h-14 w-full"
-                            />
-                            <input
-                                type="text"
-                                name="last_name"
-                                value={formData.last_name}
-                                onChange={handleChange}
-                                placeholder="Last Name"
-                                className="input input-bordered h-14 w-full"
-                            />
-                        </div>
+                    <form
+                        onSubmit={handleSubmit}
+                        className="mt-6 space-y-4">
+
 
                         {/* Email */}
                         <input
@@ -144,49 +124,23 @@ export default function Register() {
                             </span>
                         </div>
 
-                        {/* Confirm Password */}
-                        <div className="relative">
-                            <input
-                                type={showConfirm ? "text" : "password"}
-                                name="password_confirmation"
-                                value={formData.password_confirmation}
-                                onChange={handleChange}
-                                placeholder="Confirm Password"
-                                className="input input-bordered h-14 w-full pr-10"
-                            />
-                            <span
-                                className="absolute right-3 top-4 cursor-pointer text-gray-500"
-                                onClick={() => setShowConfirm(!showConfirm)}
-                            >
-                                {showConfirm ? (
-                                    <AiOutlineEyeInvisible size={22} />
-                                ) : (
-                                    <AiOutlineEye size={22} />
-                                )}
-                            </span>
-                        </div>
-
                         {/* Terms & Conditions */}
-                        <label className="flex items-center gap-2 text-sm">
+                    <div className="flex items-center justify-between">
+                            <label className="flex items-center gap-2 text-sm">
                             <input
                                 type="checkbox"
-                                name="terms"
-                                checked={formData.terms}
+                                name="remember_me"
+                                checked={formData.remember_me}
                                 onChange={handleChange}
                                 className="checkbox checkbox-sm"
                             />
                             <span>
-                                I agree to Tech Takes{" "}
-                                <a href="#" className="text-blue-600 underline">
-                                    Terms of Service
-                                </a>{" "}
-                                and{" "}
-                                <a href="#" className="text-blue-600 underline">
-                                    Privacy Policy
-                                </a>
-                                .
+                                Remember Me
                             </span>
                         </label>
+
+                        <Link to='/forgot-password' ><p className="text-[#3ba334] hover:underline transition-transform duration-300 ease-in-out  " >Forgot password?</p></Link>
+                    </div>
 
                         {/* Submit Button */}
                         <button
@@ -196,7 +150,7 @@ export default function Register() {
                             text-white hover:scale-105 shadow-[0px_13px_22px_-6px_rgba(59,163,52,0.67)] 
                             border-none px-6 rounded-[8px] bg-[#3ba334] my-8 w-full"
                         >
-                            {loading ? "Creating..." : "Create Account"}
+                            {loading ? "Login..." : "Log In"}
                         </button>
                     </form>
 
@@ -208,16 +162,16 @@ export default function Register() {
                     </div>
 
                     {/* Google Button */}
-                   <Link  target="_blank" to='https://firebase.google.com/docs/auth' > <button className="btn w-full bg-white border border-gray-300 hover:bg-gray-100">
+                    <Link target="_blank" to='https://firebase.google.com/docs/auth' >   <button className="btn w-full bg-white border border-gray-300 hover:bg-gray-100">
                         <FcGoogle size={22} />
                         <span>Continue with Google</span>
                     </button> </Link>
 
                     {/* Footer Link */}
                     <p className="text-center text-sm mt-5">
-                        Already have an account?{" "}
-                        <Link to="/login" className="text-green-600 font-medium">
-                            Log In
+                        Don’t have an account?{" "}
+                        <Link to="/register" className="text-green-600 font-medium">
+                            Get started
                         </Link>
                     </p>
                 </div>
@@ -225,3 +179,4 @@ export default function Register() {
         </div>
     );
 }
+

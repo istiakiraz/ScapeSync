@@ -13,9 +13,9 @@ export default function Build() {
     return (
         <div className='mt-40 relative text-center'>
 
-            <img className='absolute h-[1420px] top-40 right-200' src={svg2} alt="svg img" />
-            <img className='absolute top-40 left-40 ' src={svg3} alt="svg img" />
-            <img className='absolute top-40 right-20 ' src={svg4} alt="svg img" />
+            <img className='absolute hidden lg:block h-[1420px] top-40 right-200' src={svg2} alt="svg img" />
+            <img className='absolute hidden lg:block top-40 left-40 ' src={svg3} alt="svg img" />
+            <img className='absolute hidden lg:block top-40 right-20 ' src={svg4} alt="svg img" />
 
            <span className='relative' >
              <h2 className='text-5xl  relative z-20 font-bold' >
@@ -29,7 +29,7 @@ export default function Build() {
 
 
             {/* mobile show 01 */}
-            <div className='pt-20 flex items-center gap-50  '>
+            <div className='pt-20 flex flex-col-reverse md:flex-row items-center gap-15 mb-10 md:mb-0 md:gap-50  '>
                 {/* content section */}
                 <div className='text-left'>
                     <span><p className='text-green-600 text-[12px] w-fit px-4 mb-2  rounded-2xl bg-green-50 border-[1px]' >User</p></span>
@@ -51,12 +51,12 @@ export default function Build() {
                 backgroundSize: "150%" }}
                  >
                     <img src={mobile1} alt="mobile img" />
-                    <img className='absolute -mt-28' src={bgWhite} alt="mobile img" />
+                    <img className='absolute bottom-0' src={bgWhite} alt="mobile img" />
                 </div>
             </div>
             
             {/* mobile show 02 */}
-            <div className=' flex items-center place-content-center gap-50  '>
+            <div className='  flex flex-col md:flex-row items-center mb-10 md:md-0 gap-10 md:gap-50  '>
                
 
                 {/* img section  */}
@@ -84,7 +84,7 @@ export default function Build() {
             </div>
 
             {/* mobile show 03 */}
-            <div className='pt-10 flex items-center gap-50  '>
+            <div className='pt-10 flex flex-col-reverse md:flex-row items-center gap-20 md:gap-50   '>
                 {/* content section */}
                 <div className='text-left'>
                     <span><p className='text-green-600 text-[12px] w-fit px-4 mb-2  rounded-2xl bg-green-50 border-[1px]' >Employees</p></span>
@@ -105,7 +105,7 @@ export default function Build() {
                 backgroundSize: "150%" }}
                  >
                     <img src={mobile2} alt="mobile img" />
-                    <img className='absolute -mt-28' src={bgWhite} alt="bg img" />
+                    <img className='absolute bottom-0' src={bgWhite} alt="bg img" />
                 </div>
             </div>
 
